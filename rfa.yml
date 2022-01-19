@@ -1,0 +1,10 @@
+name: rfa
+channels:
+  - anaconda
+  - defaults
+dependencies:
+  - python=3.8
+  - numpy
+  - scipy
+  - pillow
+  - pandas
