@@ -1,4 +1,4 @@
-# RFA: Robust Aggregation for Federated Learning
+# tRFA: Robust Aggregation for Federated Learning in PyTorch
 
 This code provides a PyTorch implementation of 
 robust aggregation algorithms for federated learning.
