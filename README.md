@@ -32,7 +32,7 @@ to update the central model.
 
 The [accompanying paper](https://arxiv.org/abs/1912.13445) describes a 
 robust aggregation approach to make federated learning robust 
-to settings when a fraction of the devices may be sending outlier updates to the server. 
+to settings when a fraction of the devices may be sending corrupted updates to the server. 
 
 This code compares the RobustFedAgg algorithm proposed in the accompanying paper
 to the FedAvg algorithm ([McMahan et. al. 2017](https://arxiv.org/abs/1602.05629)).
@@ -56,15 +56,8 @@ conda env create -f rfa.yml
 
 
 **Installing PyTorch:** Instructions to install 
-a PyTorch compatible with the CUDA on your GPUs
+a PyTorch compatible with the CUDA on your GPUs (or without GPUs)
 can be found [here](https://pytorch.org/get-started/locally/).
-Note that PyTorch can be installed without GPU support, and can be used to reproduce experiments
-from the paper. 
-However, for speed of execution, it is highly recommended to enable GPU support for the neural network 
-experiments on datasets EMNIST and Shakespeare.
-
-The primary dependencies are PyTorch, Numpy, Scipy, Pillow and Pandas.
-The code has been tested on Ubuntu 18.04.
 
 
 Data Setup
@@ -111,21 +104,13 @@ please use that repository to exactly reproduce the results.
 
 
 
-Reproducting Experiments in the Paper
+Reproducing Experiments in the Paper
 -------------------------------------
 
-Once the data has been set up, the scripts provided in the folder ```experiments/``` can be used 
+Once the data has been set up, the scripts provided in the folder ```models/scripts/``` can be used 
 to reproduce the experiments in the paper.
-Note that GPU computations are non-deterministic. Consequently, the ConvNet and LSTM 
-experiments reported in the paper, which were run using GPUs, are not perfectly reproducible. 
 
-
-From the base folder of this repository, first create the folder 
-`outputs` as 
-```
-mkdir outputs
-```
-and run the scripts, for example, `shakespeare_lstm.sh` as 
-```
-./experiments/main/shakespeare_lstm.sh
+Change directory to ```models``` and run the scripts as 
+```bash
+./scripts/sent140/gm.sh  # run geometric median experiments
 ``` 
