@@ -7,11 +7,10 @@
 
 This code provides a PyTorch implementation of 
 robust aggregation algorithms for federated learning.
-This codebase is based on a fork of the [Leaf](leaf.cmu.edu) benchmark suite
-and provides scripts to reproduce the experimental results in the 
+This codebase provides scripts to reproduce the experimental results in the 
 paper [Robust Aggregation for Federated Learning](https://ieeexplore.ieee.org/document/9721118/). 
 
-If you use this code, please cite the paper using the bibtex reference below
+If you use this code, please cite the paper using the Bibtex reference below
 
 ```
 @article{pillutla2022robust,
@@ -26,11 +25,17 @@ If you use this code, please cite the paper using the bibtex reference below
 }
 ```
 
+This code is based on [this repository](https://github.com/krishnap25/simplicial-fl),
+which in turn was based on a fork of the [Leaf](leaf.cmu.edu) benchmark suite.
+Please consider citing the papers for these repositories if you find this codebase useful.
+A more modern and scalable PyTorch-based federated learning simulation can also be found
+[here](https://github.com/facebookresearch/FL_partial_personalization).
+
 Introduction
 -----------------
-Federated Learning is a paradigm to train centralized machine learning models 
+Federated Learning is a paradigm for training centralized machine learning models 
 on data distributed over a large number of devices such as mobile phones.
-A typical federated learning algorithm consists in local computation on some 
+A typical federated learning algorithm consists of local computation on some 
 of the devices followed by secure aggregation of individual device updates 
 to update the central model. 
 
@@ -70,7 +75,7 @@ Data Setup
 
 1. Sent140
 
-  * **Overview:** Classify sentiment of tweets as positive or negative
+  * **Overview:** Classify the sentiment of tweets as positive or negative
   * **Details:** 877 users used for experiments
   * **Task:** Sentiment Analysis
   * **Setup:** Go to ```data/sent140``` and run the command (~1.2G of disk space)
@@ -80,7 +85,7 @@ time ./preprocess.sh -s niid --sf 1.0 -k 100 -t sample -tf 0.8
 ```
 
 
-2. EMNIST (Called FEMNIST here)
+2. EMNIST (Called FEMNIST in the codebase)
 
   * **Overview:** Character Recognition Dataset
   * **Details:** 62 classes (10 digits, 26 lowercase, 26 uppercase), 3500 total users, 1000 users used for experiments
